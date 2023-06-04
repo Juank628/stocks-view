@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "stylelint '**/*.{css,scss}' && npx eslint . --ext .jsx --fix && eslint . --fix"
+    "lint": "stylelint '**/*.{css,scss}' --fix && npx eslint . --ext .jsx --fix && eslint . --fix"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
