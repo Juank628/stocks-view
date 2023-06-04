@@ -1,18 +1,31 @@
-import React from 'react'
+import React from 'react';
+import styles from './QuickTable.module.scss';
 
 export default function QuickTable() {
   return (
-    <table>
-        <tbody>
-            <tr>
-                <td>Price</td>
-                <td>127.50</td>
-            </tr>
-            <tr>
-                <td>PER</td>
-                <td>32</td>
-            </tr>
-        </tbody>
+    <table className={styles.qTable}>
+      <tbody>
+        <tr>
+          <td className={styles.key}>Cap. Group</td>
+          <td className={styles.value}>Mega-cap</td>
+        </tr>
+        <tr>
+          <td className={styles.key}>Market cap</td>
+          <td className={styles.value}>854656</td>
+        </tr>
+        <tr>
+          <td className={styles.key}>PE Ratio</td>
+          <td className={styles.value}>32</td>
+        </tr>
+        <tr>
+          <td className={styles.key}>Industry</td>
+          <td className={styles.value}>Consumer Electronics xxxxxxxxxxxxxx</td>
+        </tr>
+        <tr>
+          <td className={styles.key}>Sector</td>
+          <td className={styles.value}>Technology</td>
+        </tr>
+      </tbody>
     </table>
-  )
+  );
 }

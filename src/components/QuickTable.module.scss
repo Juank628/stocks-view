@@ -1,0 +1,23 @@
+.qTable {
+  width: 100%;
+  border-collapse: collapse;
+
+  tr {
+    border-bottom: 1px solid lightgray;
+  }
+}
+
+.key {
+  padding: 10px 0 10px 15px;
+}
+
+.value {
+  padding: 10px 15px 10px 0px;
+  font-weight: 500;
+  text-align: right;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px;
+}
