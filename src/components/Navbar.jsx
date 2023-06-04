@@ -12,10 +12,27 @@ export default function Navbar() {
 
         <input className={styles.searchInput} type="text" placeholder="Search a stock..." />
       </nav>
-      <ul>
+      <ul className={styles.dropDownMenu}>
         <li>
-          <span>AAPL</span>
-          <span>Apple inc.</span>
+          <button type="button" className={styles.searchItem}>
+            <span>AAPL</span>
+            <span>Apple inc.</span>
+            <span>NASDAQ</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" className={styles.searchItem}>
+            <span>AAPL</span>
+            <span>Apple inc.</span>
+            <span>NASDAQ</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" className={styles.searchItem}>
+            <span>AAPL</span>
+            <span>Apple inc.</span>
+            <span>NASDAQ</span>
+          </button>
         </li>
       </ul>
     </>
