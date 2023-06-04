@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  gap: 10px;
+
+  button {
+    width: 40px;
+    font-size: 0.8rem;
+    padding: 5px 0 5px 0;
+  }
+}
+
+.nonSelected {
+  background-color: white;
+  border: 1px solid lightgray;
+}
+
+.selected {
+  background-color: #68a7ad;
+  border: 1px solid #68a7ad;
+  color: white;
+}
