@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  height: 54px;
+  padding: 10px;
+  color: white;
+  background-color: black;
+}
+
+.logoRow1 {
+  font-weight: 600;
+}
+
+.logoRow2 {
+  font-size: 0.8rem;
+}
+
+.searchInput {
+  padding: 5px 15px;
+  border-radius: 50px;
+}
