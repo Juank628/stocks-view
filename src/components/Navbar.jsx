@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { readAllTickers } from '../redux/slices/stocksList';
+import { readFundamentals } from '../redux/slices/stockFundamentals';
 import styles from './Navbar.module.scss';
 
 export default function Navbar() {
@@ -11,6 +12,12 @@ export default function Navbar() {
 
   const searchHandler = (e) => {
     setSearchText(e.target.value);
+  };
+
+  const getStockData = (e) => {
+    console.log(e.currentTarget.name);
+    dispatch(readFundamentals(e.currentTarget.name));
+    setSearchText([]);
   };
 
   useEffect(() => {
@@ -43,7 +50,7 @@ export default function Navbar() {
         <li>
           {
             searchResult.map((item) => (
-              <button key={item.symbol} type="button" className={styles.searchItem}>
+              <button key={item.symbol} name={item.symbol} type="button" className={styles.searchItem} onClick={getStockData}>
                 <span>{item.symbol}</span>
                 <span>{item.companyName}</span>
                 <span>{item.exchangeShortName}</span>
