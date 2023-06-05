@@ -3,6 +3,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 const initialState = {
   data: {},
   loading: false,
+  errors: {},
 };
 
 export const readFundamentals = createAsyncThunk(
@@ -26,8 +27,15 @@ const stockFundamentalsSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
+    builder.addCase(readFundamentals.pending, (state) => {
+      state.loading = true;
+    });
     builder.addCase(readFundamentals.fulfilled, (state, action) => {
       state.data = action.payload;
+      state.loading = false;
+    });
+    builder.addCase(readFundamentals.rejected, (state, action) => {
+      state.errors = action.payload;
       state.loading = false;
     });
   },
