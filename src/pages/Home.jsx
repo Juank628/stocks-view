@@ -5,10 +5,11 @@ import Chart from '../components/Chart';
 import TimeSpanSelector from '../components/TimeSpanSelector';
 import QuickTable from '../components/QuickTable';
 import CompanyProfile from '../components/CompanyProfile';
+import NoData from '../components/NoData';
 import styles from './Home.module.scss';
 
 export default function Home() {
-  const { data } = useSelector((store) => store.stockFundamentals);
+  const { data, loading } = useSelector((store) => store.stockFundamentals);
   const [isData, setIsData] = useState(false);
 
   useEffect(() => {
@@ -17,7 +18,7 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-      { isData ? (
+      { isData && !loading ? (
         <>
           <StockHeader />
           <Chart />
@@ -26,7 +27,7 @@ export default function Home() {
           <CompanyProfile />
         </>
       ) : (
-        <p>No data</p>
+        <NoData loading={loading} />
       ) }
     </div>
   );
