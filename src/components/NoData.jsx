@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './NoData.module.scss';
 
 export default function NoData({ loading }) {
@@ -12,3 +13,7 @@ export default function NoData({ loading }) {
     </div>
   );
 }
+
+NoData.propTypes = {
+  loading: PropTypes.bool.isRequired,
+};
