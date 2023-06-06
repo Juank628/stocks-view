@@ -15,7 +15,6 @@ export default function Navbar() {
   };
 
   const getStockData = (e) => {
-    console.log(e.currentTarget.name);
     dispatch(readFundamentals(e.currentTarget.name));
     setSearchText([]);
   };
