@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import MarketCap from './MarketCap';
 import styles from './QuickTable.module.scss';
 
 export default function QuickTable() {
@@ -10,7 +11,7 @@ export default function QuickTable() {
       <tbody>
         <tr>
           <td className={styles.key}>Cap. Group</td>
-          <td className={styles.value}>Mega-cap</td>
+          <td className={styles.value}><MarketCap /></td>
         </tr>
         <tr>
           <td className={styles.key}>Market cap</td>
