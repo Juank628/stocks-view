@@ -1,22 +1,17 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import {
   AreaChart, Area, XAxis, YAxis, ResponsiveContainer,
 } from 'recharts';
 
 export default function Chart() {
-  const data = [
-    { year: '2017', price: 32 },
-    { year: '2018', price: 64 },
-    { year: '2019', price: 21 },
-    { year: '2020', price: 43 },
-    { year: '2021', price: 28 },
-  ];
+  const { prices } = useSelector((store) => store.stockHistory);
 
   return (
     <div style={{ width: '100%', height: 300 }}>
       <ResponsiveContainer>
         <AreaChart
-          data={data}
+          data={prices}
           margin={{
             top: 10,
             right: 5,
@@ -24,7 +19,14 @@ export default function Chart() {
             bottom: 0,
           }}
         >
-          <XAxis dataKey="year" fontSize="12px" />
+          <XAxis 
+            dataKey="time"
+            scale="time"
+            type="number"
+            domain={['auto', 'auto']}
+            tickFormatter={(unixTime) => new Date(unixTime * 1000).getFullYear()}
+            fontSize="12px"
+          />
           <YAxis fontSize="12px" />
           <Area type="monotone" dataKey="price" stroke="#68A7AD" />
         </AreaChart>

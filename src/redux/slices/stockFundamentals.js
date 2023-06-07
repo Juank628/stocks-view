@@ -7,7 +7,7 @@ const initialState = {
 };
 
 export const readFundamentals = createAsyncThunk(
-  'stocksFundamentals/readFundamentals',
+  'stockFundamentals/readFundamentals',
   async (ticker) => {
     const { VITE_API_2_URL, VITE_API_2_KEY, VITE_API_2_HOST } = import.meta.env;
     const res = await fetch(`${VITE_API_2_URL}/stocks/${ticker}?modules=assetProfile%2CsummaryProfile%2Cprice`, {
