@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { readAllTickers } from '../redux/slices/stocksList';
 import { readFundamentals } from '../redux/slices/stockFundamentals';
+import { readPriceHistory } from '../redux/slices/stockHistory';
 import styles from './Navbar.module.scss';
 
 export default function Navbar() {
@@ -15,8 +16,8 @@ export default function Navbar() {
   };
 
   const getStockData = (e) => {
-    console.log(e.currentTarget.name);
     dispatch(readFundamentals(e.currentTarget.name));
+    dispatch(readPriceHistory(e.currentTarget.name));
     setSearchText([]);
   };
 
