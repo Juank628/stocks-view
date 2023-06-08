@@ -31,6 +31,7 @@ export default function Chart() {
               dataKey="time"
               type="number"
               scale="time"
+              interval={270}
               allowDataOverflow
               domain={xRange}
               tickFormatter={(unixTime) => new Date(unixTime * 1000).getFullYear()}
